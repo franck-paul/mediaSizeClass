@@ -16,10 +16,6 @@ namespace Dotclear\Plugin\mediaSizeClass;
 use dcCore;
 use dcUtils;
 
-if (!defined('DC_RC_PATH')) {
-    return;
-}
-
 dcCore::app()->addBehaviors([
     'publicHeadContent' => [__NAMESPACE__ . '\publicBehaviors', 'publicHeadContent'],
 ]);
