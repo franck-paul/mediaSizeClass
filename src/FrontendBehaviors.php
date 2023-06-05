@@ -21,7 +21,8 @@ class FrontendBehaviors
 {
     public static function publicHeadContent()
     {
-        if (!dcCore::app()->blog->settings->mediasizeclass->enabled) {
+        $settings = dcCore::app()->blog->settings->get(My::id());
+        if (!$settings->enabled) {
             return;
         }
 
