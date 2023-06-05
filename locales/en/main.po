@@ -13,21 +13,17 @@ msgstr ""
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../git-plugins/mediaSizeClass/src/Backend.php:27
 msgid "Add CSS classes to images from your public folder"
 msgstr ""
 
-#: ../git-plugins/mediaSizeClass/src/Backend.php:27
 msgid "mediaSizeClass"
 msgstr ""
 
-#: ../git-plugins/mediaSizeClass/src/BackendBehaviors.php:34
 msgid "Add CSS classes to your medias"
 msgstr ""
 
-#: ../git-plugins/mediaSizeClass/src/BackendBehaviors.php:39
 msgid "Add a CSS class in &lt;img /&gt; tag depending on media size inserted: \"thumbnail-img\" to thumbnail-size medias; \"square-img\" to square-size medias; \"small-img\" to small-size medias; \"medium-img\" to medium-size medias."
 msgstr ""

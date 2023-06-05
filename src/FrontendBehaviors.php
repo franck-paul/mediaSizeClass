@@ -5,22 +5,19 @@
  * @package Dotclear
  * @subpackage Plugins
  *
- * @author Kozlika, Franck Paul and contributors
+ * @author Franck Paul and contributors
  *
- * @copyright Kozlika, kozlika@gmail.com
+ * @copyright Franck Paul carnet.franck.paul@gmail.com
  * @copyright GPL-2.0 https://www.gnu.org/licenses/gpl-2.0.html
  */
+declare(strict_types=1);
 
 namespace Dotclear\Plugin\mediaSizeClass;
 
 use dcCore;
 use dcUtils;
 
-dcCore::app()->addBehaviors([
-    'publicHeadContent' => [__NAMESPACE__ . '\publicBehaviors', 'publicHeadContent'],
-]);
-
-class publicBehaviors
+class FrontendBehaviors
 {
     public static function publicHeadContent()
     {
@@ -29,6 +26,6 @@ class publicBehaviors
         }
 
         echo
-        dcUtils::jsModuleLoad('mediasizeclass/js/msc.js');
+        dcUtils::jsModuleLoad(My::id() . '/js/msc.js');
     }
 }
