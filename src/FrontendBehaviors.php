@@ -15,7 +15,6 @@ declare(strict_types=1);
 namespace Dotclear\Plugin\mediaSizeClass;
 
 use dcCore;
-use dcUtils;
 
 class FrontendBehaviors
 {
@@ -27,6 +26,6 @@ class FrontendBehaviors
         }
 
         echo
-        dcUtils::jsModuleLoad(My::id() . '/js/msc.js');
+        My::jsLoad('msc.js');
     }
 }
