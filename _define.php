@@ -14,7 +14,7 @@ $this->registerModule(
     'mediaSizeClass',
     'Add CSS classes to images from your public folder',
     'Kozlika, Franck Paul and contributors',
-    '2.0.2',
+    '3.0',
     [
         'requires'    => [['core', '2.27'], ['php', '8.1']],
         'permissions' => dcCore::app()->auth->makePermissions([
