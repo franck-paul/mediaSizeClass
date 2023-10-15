@@ -16,14 +16,16 @@ namespace Dotclear\Plugin\mediaSizeClass;
 
 class FrontendBehaviors
 {
-    public static function publicHeadContent()
+    public static function publicHeadContent(): string
     {
         $settings = My::settings();
         if (!$settings->enabled) {
-            return;
+            return '';
         }
 
         echo
         My::jsLoad('msc.js');
+
+        return '';
     }
 }

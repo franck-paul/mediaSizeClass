@@ -23,27 +23,28 @@ use Dotclear\Helper\Html\Form\Para;
 
 class BackendBehaviors
 {
-    public static function adminBlogPreferencesForm()
+    public static function adminBlogPreferencesForm(): string
     {
-        $settings = My::settings();
-
         // Add fieldset for plugin options
         echo
         (new Fieldset('mediasizeclass'))
         ->legend((new Legend(__('Add CSS classes to your medias'))))
         ->fields([
             (new Para())->items([
-                (new Checkbox('mediasizeclass_enabled', $settings->enabled))
+                (new Checkbox('mediasizeclass_enabled', My::settings()->enabled))
                     ->value(1)
                     ->label((new Label(__('Add a CSS class in &lt;img /&gt; tag depending on media size inserted: "thumbnail-img" to thumbnail-size medias; "square-img" to square-size medias; "small-img" to small-size medias; "medium-img" to medium-size medias.'), Label::INSIDE_TEXT_AFTER))),
             ]),
         ])
         ->render();
+
+        return '';
     }
 
-    public static function adminBeforeBlogSettingsUpdate()
+    public static function adminBeforeBlogSettingsUpdate(): string
     {
-        $settings = My::settings();
-        $settings->put('enabled', !empty($_POST['mediasizeclass_enabled']), dcNamespace::NS_BOOL);
+        My::settings()->put('enabled', !empty($_POST['mediasizeclass_enabled']), dcNamespace::NS_BOOL);
+
+        return '';
     }
 }
