@@ -14,8 +14,6 @@ declare(strict_types=1);
 
 namespace Dotclear\Plugin\mediaSizeClass;
 
-use dcCore;
-use dcNamespace;
 use Dotclear\App;
 use Dotclear\Core\Process;
 use Exception;
@@ -35,20 +33,20 @@ class Install extends Process
 
         try {
             // Update
-            $old_version = dcCore::app()->getVersion(My::id());
+            $old_version = App::version()->getVersion(My::id());
             if (version_compare((string) $old_version, '2.0', '<')) {
                 // Rename settings namespace
                 if (App::blog()->settings()->exists('mediasizeclass')) {
-                    App::blog()->settings()->delNamespace(My::id());
-                    App::blog()->settings()->renNamespace('mediasizeclass', My::id());
+                    App::blog()->settings()->delWorkspace(My::id());
+                    App::blog()->settings()->renWorkspace('mediasizeclass', My::id());
                 }
             }
 
             // Init
             $settings = My::settings();
-            $settings->put('enabled', true, dcNamespace::NS_BOOL, '', false, true);
+            $settings->put('enabled', true, App::blogWorkspace()::NS_BOOL, '', false, true);
         } catch (Exception $e) {
-            dcCore::app()->error->add($e->getMessage());
+            App::error()->add($e->getMessage());
         }
 
         return true;
