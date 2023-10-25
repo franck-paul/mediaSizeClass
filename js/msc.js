@@ -6,7 +6,7 @@ window.addEventListener('load', () => {
       s: 'small',
       m: 'medium',
     };
-    const types = ['jpg', 'png', 'webp'];
+    const types = ['jpg', 'png', 'webp', 'avif'];
 
     Object.entries(sizes).forEach((size) => {
       const [key, value] = size;
