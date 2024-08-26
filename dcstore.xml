@@ -1,10 +1,10 @@
 <modules xmlns:da="http://dotaddict.org/da/">
   <module id="mediaSizeClass">
     <name>mediaSizeClass</name>
-    <version>4.1</version>
+    <version>4.2</version>
     <author>Kozlika, Franck Paul and contributors</author>
     <desc>Add CSS classes to images from your public folder</desc>
-    <file>https://github.com/franck-paul/mediaSizeClass/releases/download/4.1/plugin-mediaSizeClass-4.1.zip</file>
+    <file>https://github.com/franck-paul/mediaSizeClass/releases/download/4.2/plugin-mediaSizeClass-4.2.zip</file>
     <da:dcmin>2.28</da:dcmin>
     <da:details>https://github.com/franck-paul/mediaSizeClass</da:details>
     <da:support>https://github.com/franck-paul/mediaSizeClass</da:support>
