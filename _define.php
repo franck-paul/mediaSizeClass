@@ -25,6 +25,6 @@ $this->registerModule(
 
         'details'    => 'https://github.com/franck-paul/mediaSizeClass',
         'support'    => 'https://github.com/franck-paul/mediaSizeClass',
-        'repository' => 'https://raw.githubusercontent.com/franck-paul/mediaSizeClass/master/dcstore.xml',
+        'repository' => 'https://raw.githubusercontent.com/franck-paul/mediaSizeClass/main/dcstore.xml',
     ]
 );
