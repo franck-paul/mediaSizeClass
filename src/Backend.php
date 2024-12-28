@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @brief mediaSizeClass, a plugin for Dotclear 2
  *
@@ -22,7 +23,8 @@ class Backend extends Process
     public static function init(): bool
     {
         // dead but useful code, in order to have translations
-        __('mediaSizeClass') . __('Add CSS classes to images from your public folder');
+        __('mediaSizeClass');
+        __('Add CSS classes to images from your public folder');
 
         return self::status(My::checkContext(My::BACKEND));
     }
