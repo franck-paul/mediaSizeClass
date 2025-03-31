@@ -1,5 +1,6 @@
 window.addEventListener('load', () => {
-  document.querySelectorAll('article.post, div.post').forEach((element) => {
+  const posts = document.querySelectorAll('article.post, div.post');
+  for (const post of posts) {
     const sizes = {
       t: 'thumbnail',
       sq: 'square',
@@ -7,18 +8,15 @@ window.addEventListener('load', () => {
       m: 'medium',
     };
     const types = ['jpg', 'jpeg', 'png', 'webp', 'avif'];
-
-    Object.entries(sizes).forEach((size) => {
+    for (const size of sizes) {
       const [key, value] = size;
-      types.forEach((type) => {
+      for (const type of types) {
         const pattern = `img[src$="_${key}.${type}"]`;
-        const images = element.querySelectorAll(pattern);
-        if (images.length) {
-          images.forEach((image) => {
-            image.classList.add(`${value}-img`);
-          });
+        const images = post.querySelectorAll(pattern);
+        for (const image of images) {
+          image.classList.add(`${value}-img`);
         }
-      });
-    });
-  });
+      }
+    }
+  }
 });

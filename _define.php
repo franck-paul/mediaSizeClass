@@ -28,5 +28,6 @@ $this->registerModule(
         'details'    => 'https://github.com/franck-paul/mediaSizeClass',
         'support'    => 'https://github.com/franck-paul/mediaSizeClass',
         'repository' => 'https://raw.githubusercontent.com/franck-paul/mediaSizeClass/main/dcstore.xml',
+        'license'    => 'gpl2',
     ]
 );
