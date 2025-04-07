@@ -15,9 +15,9 @@ $this->registerModule(
     'mediaSizeClass',
     'Add CSS classes to images from your public folder',
     'Kozlika, Franck Paul and contributors',
-    '4.3',
+    '4.3.1',
     [
-        'date'        => '2025-03-31T09:28:39+0200',
+        'date'        => '2025-04-07T20:26:17+0200',
         'requires'    => [['core', '2.28']],
         'permissions' => 'My',
         'type'        => 'plugin',
