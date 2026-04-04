@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @brief mediaSizeClass, a plugin for Dotclear 2
  *
@@ -14,6 +15,9 @@ declare(strict_types=1);
 
 namespace Dotclear\Plugin\mediaSizeClass;
 
+use Dotclear\App;
+use Dotclear\Helper\Html\Html;
+
 class FrontendBehaviors
 {
     public static function publicHeadContent(): string
@@ -23,8 +27,23 @@ class FrontendBehaviors
             return '';
         }
 
-        echo
-        My::jsLoad('msc.js');
+        $list       = App::media()->getThumbSizes();
+        $thumbnails = [];
+        foreach ($list as $code => $info) {
+            $name = isset($info[3]) && ($name = $info[3]) ? $name : '';
+            if ($name !== '') {
+                $thumbnails[$code] = mb_strtolower(str_replace([' ', '.', '_'], '-', $name));
+            }
+        }
+
+        if ($thumbnails !== []) {
+            echo
+            Html::jsJson('media-size-class', [
+                'types' => ['jpg', 'jpeg', 'png', 'gif', 'svg', 'wepb', 'avif'],
+                'list'  => $thumbnails,
+            ]) .
+            My::jsLoad('msc.js');
+        }
 
         return '';
     }
