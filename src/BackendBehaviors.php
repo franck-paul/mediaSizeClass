@@ -26,7 +26,7 @@ class BackendBehaviors
 {
     public static function adminBlogPreferencesForm(): string
     {
-        $enabled = is_bool($enabled = My::settings()->enabled) && $enabled;
+        $enabled = My::settings()->getBool('enabled', false);
 
         // Add fieldset for plugin options
         echo
