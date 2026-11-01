@@ -23,14 +23,14 @@ class FrontendBehaviors
     public static function publicHeadContent(): string
     {
         $settings = My::settings();
-        if (!$settings->getBool('enabled')) {
+        if (!$settings->getBool('enabled', false)) {
             return '';
         }
 
         $list       = App::media()->getThumbSizes();
         $thumbnails = [];
         foreach ($list as $code => $info) {
-            $name = isset($info[3]) && ($name = $info[3]) ? $name : '';
+            $name = $info[3] ?? '';
             if ($name !== '') {
                 $thumbnails[$code] = mb_strtolower(str_replace([' ', '.', '_'], '-', $name));
             }
