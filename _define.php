@@ -18,9 +18,9 @@ if (isset($this) && is_object($this) && method_exists($this, 'registerModule') &
         'mediaSizeClass',
         'Add CSS classes to images from your public folder',
         'Kozlika, Franck Paul and contributors',
-        '6.0',
+        '6.1',
         [
-            'date'        => '2026-08-03T10:04:24+0200',
+            'date'        => '2026-11-07T16:58:25+0100',
             'requires'    => [['core', '2.39']],
             'permissions' => 'My',
             'type'        => 'plugin',
